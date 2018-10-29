@@ -2,7 +2,6 @@
 
 #include "mathelium.h"
 
-#include "mathelium/include/Vec3D.h"
 int main() {
 
     {// les vector dans mathelium
@@ -55,5 +54,10 @@ int main() {
         std::cout << a << std::endl;
     }
 
+    {
+        mathelium::Complex a(0,1);
+        a = 3 - a ;
+        std::cout << a << std::endl;
+    }
     return 0;
 }

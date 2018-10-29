@@ -58,7 +58,7 @@ namespace mathelium
     template<typename TYPE>
     void Vector<TYPE>::operator+=(const Vector<TYPE> &vector) {
         if(_data.size() == vector._data.size())
-            for (int i(0); i < vector.size(); i++)
+            for (int i(0); i < vector._data.size(); i++)
                 _data[i] += vector._data[i];
         else
             std::cout << "Error Dimensional!" << std::endl;
@@ -67,7 +67,7 @@ namespace mathelium
     template<typename TYPE>
     void Vector<TYPE>::operator-=(const Vector<TYPE> &vector) {
         if(_data.size() == vector._data.size())
-            for (int i(0); i < vector.size(); i++)
+            for (int i(0); i < vector._data.size(); i++)
                 _data[i] -= vector._data[i];
         else
         std::cout << "Error Dimensional!" << std::endl;
