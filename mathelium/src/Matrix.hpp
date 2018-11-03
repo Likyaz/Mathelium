@@ -4,7 +4,7 @@ namespace mathelium
 {
     template<typename TYPE>
     Matrix<TYPE>::Matrix() {
-        _data = new TYPE[9] {0};
+        _data = 0;
         _sizeColumn = 3;
         _sizeRow = 3;
         _size = 9;
@@ -20,7 +20,12 @@ namespace mathelium
 
     template<typename TYPE>
     Matrix<TYPE>::Matrix(Matrix const& matrix) {
-        copy(matrix);
+        _data = new TYPE[matrix._sizeColumn * matrix._sizeRow] {0};
+        _sizeColumn = matrix._sizeColumn;
+        _sizeRow = matrix._sizeRow;
+        _size = _sizeRow * _sizeColumn;
+        for(int i(0); i < _size; i++)
+            _data[i] = matrix._data[i];
     }
 
     template<typename TYPE>
@@ -30,7 +35,7 @@ namespace mathelium
 
     template<typename TYPE>
     void Matrix<TYPE>::resize(unsigned int sizeColumn, unsigned int sizeRow) {
-        delete[] _data;
+        if(_data != NULL) delete[] _data;
         _data = new TYPE[sizeColumn * sizeRow] {0};
         _sizeColumn = sizeColumn;
         _sizeRow = sizeRow;
@@ -73,11 +78,11 @@ namespace mathelium
     void Matrix<TYPE>::copy(Matrix const& matrix) {
         if(_data != NULL) delete[] _data;
         _data = new TYPE[matrix._sizeColumn * matrix._sizeRow] {0};
-        for(int i(0); i < matrix._size; i++)
-            _data[i] = matrix._data[i];
         _sizeColumn = matrix._sizeColumn;
         _sizeRow = matrix._sizeRow;
         _size = _sizeRow * _sizeColumn;
+        for(int i(0); i < _size; i++)
+            _data[i] = matrix._data[i];
     }
 
     template<typename TYPE>

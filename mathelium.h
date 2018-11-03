@@ -9,6 +9,7 @@
 #include "mathelium/include/Vector.h"
 #include "mathelium/include/Vec3D.h"
 #include "mathelium/include/Complex.h"
+#include "mathelium/include/Algorithme.h"
 
 
 #endif //MATHELIUM_MATHELIUM_H

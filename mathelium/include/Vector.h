@@ -26,6 +26,8 @@ namespace mathelium
         Vector& operator=(const TYPE &value);       // Affectation scalair, met tout les valeur du vecteur a la valeur demander
         Vector& operator=(const Vector &vector);    // Affectation de copy
 
+        int size();
+
         void resize(unsigned int size);
         void setValue(unsigned int it, TYPE value);
 

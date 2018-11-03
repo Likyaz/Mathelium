@@ -12,6 +12,11 @@ namespace mathelium
     }
 
     template<typename TYPE>
+    int Vector<TYPE>::size(){
+        return _data.size();
+    }
+
+    template<typename TYPE>
     void Vector<TYPE>::resize(unsigned int size) {
         _data.resize(size);
     }

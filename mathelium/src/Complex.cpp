@@ -30,7 +30,6 @@ namespace mathelium
     }
 
 
-
     void Complex::operator+=(const Complex &value) {
         _real += value._real;
         _imaginary += value._imaginary;
@@ -85,7 +84,9 @@ namespace mathelium
 
 
     std::ostream& operator<<(std::ostream& os, Complex const& complex) {
-        os << complex._real << " + " << complex._imaginary << "i";
+        if(complex._real != 0) os << complex._real << ' ';
+        if(complex._imaginary > 0 && complex._real) os << "+ ";
+        if(complex._imaginary)os << complex._imaginary << "i";
         return os;
     }
 
